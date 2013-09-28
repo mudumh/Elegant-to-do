@@ -7,7 +7,40 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHCTableViewCellDelegate.h"
+#import "RNGridMenu.h"
 
-@interface SHCViewController : UIViewController
+
+
+@interface SHCViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SHCTableViewCellDelegate,NSFetchedResultsControllerDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate,RNGridMenuDelegate>
+{
+
+
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
+
+@property(strong,nonatomic) NSFetchedResultsController * fetchedResultsController;
+@property BOOL userMovingTableRows;
+@property BOOL sourceSectionDefunctAfterUserMove;
+@property(nonatomic,strong) UIColor* cellBackgroundColor;
+@property(nonatomic,strong) UIColor* buttonColor;
+@property(nonatomic,strong) UIColor* labelFontColor;
+@property(nonatomic,strong) UIColor* navigationbarColor;
+@property(nonatomic,strong) UIColor* navigationbarTitleColor;
+
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+
+- (IBAction)menuPressed:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *noTasksLabel;
+
+-(NSUInteger)getCount;
+-(NSUInteger)getCountOfAllTasks;
+-(void)showListView;
+
 
 @end

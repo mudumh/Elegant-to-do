@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class SHCViewController;
+#import "UINavigationBar+FlatUI.h"
+#import "UIColor+FlatUI.h"
+@class SHCViewController,SHCListViewController;
 
 @interface SHCAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,4 +18,5 @@
 
 @property (strong, nonatomic) SHCViewController *viewController;
 
++ (NSInteger)OSVersion;
 @end
